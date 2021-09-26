@@ -10,7 +10,24 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      // api在以后的页面使用就相当于 /api=== http://localhost/54321/
+      '/api':{
+        // 真的服务器的接口地址
+        target:'http://localhost/54321/',
+        // 如果是https接口则需要把secure设为true
+        secure:true,
+        changeOrigin: true, // 是否是跨域请求?肯定是啊,不跨域就没有必要配置这个proxyTable了.
+        pathRewirte: {
+          // 这里是追加链接,比如真是接口里包含了 /api,就需要这样配置.
+
+          '/^api': 'api/', 
+          // 等价于 
+          // step 1  /api = http://localhost:54321/
+          // step 2 /^api = /api + api == http://localhost:54321/api
+        }
+      }
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
