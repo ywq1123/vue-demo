@@ -12,7 +12,7 @@ export default new Router({
     // 当所有的路由路径不匹配的时候会重定到home页面
 
     {
-      path: "/",
+      path: "/home",
       name: "home",
       component: home
     },
@@ -52,6 +52,10 @@ export default new Router({
       name: "mytem",
       component: mytem
     },
+    {
+      path: "/*",
+      redirect: "/home"
+    }
     // {
     //   path: "/self",
     //   name: "self",
@@ -71,9 +75,5 @@ export default new Router({
     //   // 按需载入，当切换到此组件时才加载此页面
     //   component: () => import("../view/regist.vue")
     // },
-    {
-      path: "/*",
-      redirect: home
-    }
   ]
 });

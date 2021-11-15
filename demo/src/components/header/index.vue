@@ -1,30 +1,31 @@
 <template>
+  <div>
     <div id="header">
-        <input class="put" type="text" value="20万 + 精美模板任你搜索">
-       
+      {{ title }}
     </div>
+  </div>
 </template>
 <script>
 export default {
-    name:"headerNav",
-    Date(){
-        return{
-
-        }
+  props: {
+    title: {
+      type: String,
+      default: "喵喵电影"
     }
-}
+  },
+  Date() {
+    return {};
+  }
+};
 </script>
 <style scoped>
-    .put{
-        position: fixed;
-        top: 0;
-        width: 100%;
-        font-size: 18px;
-        height: 30px;
-        line-height: 30px;
-        background: rgb(185, 189, 189);
-        text-align: center;
-        border-radius: 20px;
-    }
-
+div {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100px;
+  background: salmon;
+  line-height: 100px;
+  text-align: center;
+}
 </style>

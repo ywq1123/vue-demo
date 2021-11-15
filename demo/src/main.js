@@ -1,6 +1,7 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from "vue";
+import { Sidebar, SidebarItem } from "vant";
 import App from "./App";
 import router from "./router";
 // 引入lib-flexible使页面px转rem
@@ -12,6 +13,8 @@ import * as echarts from "echarts";
 import axios from "axios";
 import { TreeSelect } from "vant";
 Vue.use(TreeSelect);
+Vue.use(Sidebar);
+Vue.use(SidebarItem);
 // 将vue改为vue的原型链就可以在组件中使用axios了
 Vue.prototype.$ajax = axios;
 Vue.prototype.$echarts = echarts;

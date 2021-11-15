@@ -1,15 +1,47 @@
 <template>
-  <div @click="back()">你好，index</div>
+  <div>
+    <headernav title="喵喵"></headernav>
+
+    <div class="seccontent">
+      <router-link to="/tem/draw" tag="div">作画</router-link>
+      <router-link to="/tem/ele" tag="div">ele</router-link>
+      <router-link tag="div" to="/tem/head">head</router-link>
+      <router-link tag="div" to="/tem/poster">poster</router-link>
+      <router-link tag="div" to="/tem/recom">recom</router-link>
+      <router-link tag="div" to="/tem/video">video</router-link>
+    </div>
+
+    <router-view></router-view>
+    <tabbar></tabbar>
+  </div>
 </template>
 <script>
+import headernav from "@/components/header/index.vue";
+import tabbar from "../../components/tabber/index.vue";
 export default {
+  components: { tabbar, headernav },
   return: {
     data() {}
   },
-  methods: {
-    back() {
-      this.$router.back(-1);
-    }
-  }
+  methods: {}
 };
 </script>
+<style scoped>
+.seccontent {
+  padding-top: 100px;
+  height: 100px;
+  line-height: 100px;
+  overflow-x: auto;
+  white-space: nowrap;
+  overflow-y: hidden;
+  background: rebeccapurple;
+}
+.seccontent div {
+  width: 200px;
+  display: inline-block;
+  text-align: center;
+}
+.seccontent div.router-link-active {
+  background: yellow;
+}
+</style>
