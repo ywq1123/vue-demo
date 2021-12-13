@@ -1,14 +1,15 @@
 <template>
   <div>
     <headernav title="喵喵"></headernav>
-
-    <div class="seccontent">
-      <router-link to="/tem/draw" tag="div">作画</router-link>
-      <router-link to="/tem/ele" tag="div">ele</router-link>
-      <router-link tag="div" to="/tem/head">head</router-link>
-      <router-link tag="div" to="/tem/poster">poster</router-link>
-      <router-link tag="div" to="/tem/recom">recom</router-link>
-      <router-link tag="div" to="/tem/video">video</router-link>
+    <div class="seccontent-box">
+      <div class="seccontent">
+        <router-link to="/tem/draw" tag="div">作画</router-link>
+        <router-link to="/tem/ele" tag="div">ele</router-link>
+        <router-link tag="div" to="/tem/head">head</router-link>
+        <router-link tag="div" to="/tem/poster">poster</router-link>
+        <router-link tag="div" to="/tem/recom">recom</router-link>
+        <router-link tag="div" to="/tem/video">video</router-link>
+      </div>
     </div>
 
     <router-view></router-view>
@@ -27,8 +28,15 @@ export default {
 };
 </script>
 <style scoped>
+.seccontent-box {
+  height: 100px;
+}
 .seccontent {
-  padding-top: 100px;
+  position: fixed;
+  top: 100px;
+  left: 0;
+  right: 0;
+  z-index: 200;
   height: 100px;
   line-height: 100px;
   overflow-x: auto;

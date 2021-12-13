@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div id="header">
+  <div class="header-box">
+    <div id="header" class="header">
       {{ title }}
     </div>
   </div>
@@ -19,7 +19,11 @@ export default {
 };
 </script>
 <style scoped>
-div {
+.header-box {
+  height: 100px;
+  overflow: auto;
+}
+.header {
   position: fixed;
   top: 0;
   width: 100%;
@@ -27,5 +31,6 @@ div {
   background: salmon;
   line-height: 100px;
   text-align: center;
+  z-index: 20000;
 }
 </style>

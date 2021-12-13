@@ -20,7 +20,12 @@ export default new Router({
       path: "/tem",
       name: "tem",
       component: tem,
+      redirect: "/tem/draw",
       children: [
+        {
+          path: "draw",
+          component: () => import("@/view/tem/draw")
+        },
         {
           path: "recom",
           component: () => import("@/view/tem/recom")
@@ -37,10 +42,7 @@ export default new Router({
           path: "video",
           component: () => import("@/view/tem/video")
         },
-        {
-          path: "draw",
-          component: () => import("@/view/tem/draw")
-        },
+
         {
           path: "ele",
           component: () => import("@/view/tem/ele")

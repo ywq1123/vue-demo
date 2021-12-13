@@ -1,5 +1,5 @@
 <template>
-  <div id="footer">
+  <div id="footer" class="footer-box">
     <div class="footer">
       <router-link to="/home" tag="div">
         <img src="../../assets/pict.png" alt="" />

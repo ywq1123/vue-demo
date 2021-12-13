@@ -1,6 +1,21 @@
 <template>
-  <div>你好，ele</div>
+  <div>
+    <div>1212</div>
+  </div>
 </template>
 <script>
-export default {};
+export default {
+  data() {
+    return {};
+  },
+  methods: {}
+};
 </script>
+<style scoped>
+.active {
+  color: red;
+}
+.activeindex {
+  color: aqua;
+}
+</style>

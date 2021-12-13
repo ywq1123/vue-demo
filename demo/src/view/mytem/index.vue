@@ -2,6 +2,7 @@
   <div>
     <headernav title="我的喵喵"></headernav>
     我的设计
+    <nav>你好</nav>
     <tabbar></tabbar>
   </div>
 </template>
@@ -12,7 +13,9 @@ import tabbar from "@/components/tabber/index.vue";
 export default {
   components: { tabbar, headernav },
   data() {
-    return {};
+    return {
+      activeKey: 0
+    };
   },
   methods: {}
 };
