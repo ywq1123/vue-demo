@@ -1,19 +1,25 @@
 <template>
   <div>
-    你好，poster 标题
-    <van-sidebar v-model="activeKey">
-      <van-sidebar-item title="标签名称" />
-      <van-sidebar-item title="标签名称" />
-      <van-sidebar-item title="标签名称" />
+    <van-sidebar v-model="activeKey" @change="onChange">
+      <div class="tit">
+        <van-sidebar-item title="标签名称" />
+        <van-sidebar-item title="标签名称" />
+        <van-sidebar-item title="标签名称" />
+      </div>
+
+      <div class="content">
+        <p v-if="index == 0">内容</p>
+        <div v-if="index == 1">1内容</div>
+        <div v-if="index == 2">2内容</div>
+      </div>
     </van-sidebar>
-    <h1>1111{{ newstr }}</h1>
   </div>
 </template>
 
 <script>
 import Vue from "vue";
 import { Sidebar, SidebarItem } from "vant";
-
+import { Notify } from "vant";
 Vue.use(Sidebar);
 Vue.use(SidebarItem);
 export default {
@@ -21,24 +27,29 @@ export default {
     return {
       activeKey: 0,
       newstring: "",
-      newstr: ""
+      newstr: "",
+      index: ""
     };
   },
-  mounted() {
-    this.stringcall("153146");
-  },
+  mounted() {},
   methods: {
-    // 字符串去重
-    stringcall(str) {
-      var newstr = "";
-      for (let i = 0; i <= str.length; i++) {
-        if (newstr.indexOf(str[i]) == -1) {
-          newstr += str[i];
-        }
-      }
-      return newstr;
+    onChange(index) {
+      Notify({ type: "primary", message: index });
+      this.index = index;
     }
   }
 };
 </script>
-<style scoped></style>
+<style lang="less" scoped>
+.van-sidebar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  .tit {
+    width: 20%;
+  }
+  .content {
+    width: 80%;
+  }
+}
+</style>

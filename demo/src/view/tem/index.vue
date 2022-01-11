@@ -11,7 +11,7 @@
         <router-link tag="div" to="/tem/video">video</router-link>
       </div>
     </div>
-
+    <div></div>
     <router-view></router-view>
     <tabbar></tabbar>
   </div>
@@ -21,6 +21,7 @@ import headernav from "@/components/header/index.vue";
 import tabbar from "../../components/tabber/index.vue";
 export default {
   components: { tabbar, headernav },
+
   return: {
     data() {}
   },
