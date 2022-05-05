@@ -4,13 +4,12 @@ import Router from "vue-router";
 import home from "@/view/home";
 import tem from "@/view/tem";
 import mytem from "@/view/mytem";
-// import self from '@/view/self'
+import numadd from "@/view/mytem/numadd";
 Vue.use(Router);
 
 export default new Router({
   routes: [
     // 当所有的路由路径不匹配的时候会重定到home页面
-
     {
       path: "/home",
       name: "home",
@@ -53,6 +52,11 @@ export default new Router({
       path: "/mytem",
       name: "mytem",
       component: mytem
+    },
+    {
+      path: "/numadd",
+      name: "numadd",
+      component: numadd
     },
     {
       path: "/*",
